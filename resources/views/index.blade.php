@@ -290,7 +290,7 @@
                                         </div>
 
                                         <div
-                                            class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
+                                            class="anim_appear-bottom position-absolute bottom-0 inset-s-0 d-none d-sm-flex align-items-center bg-body">
                                             <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                                                 data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
                                             <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
@@ -706,7 +706,7 @@
                             </div>
 
                             <div
-                                class="anim_appear-bottom position-absolute bottom-0 start-0 d-none d-sm-flex align-items-center bg-body">
+                                class="anim_appear-bottom position-absolute bottom-0 inset-s-0 d-none d-sm-flex align-items-center bg-body">
                                 <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-add-cart js-open-aside"
                                     data-aside="cartDrawer" title="Add To Cart">Add To Cart</button>
                                 <button class="btn-link btn-link_lg me-4 text-uppercase fw-medium js-quick-view"
