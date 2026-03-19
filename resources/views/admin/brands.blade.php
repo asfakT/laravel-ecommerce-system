@@ -72,7 +72,7 @@
                 <div class="wg-table table-all-user">
 
                     <div class="table-responsive">
-                       
+
                         @if (Session::has('status'))
                             <p class="alert alert-success">
                                 {{ Session::get('status') }}
@@ -125,8 +125,7 @@
                                         </td> --}}
 
                                         <td>
-                                            <a href=""
-                                                target="_blank">
+                                            <a href="" target="_blank">
                                                 0
 
                                                 {{-- {{ $brand->products()->count() }} --}}
@@ -138,9 +137,11 @@
 
                                             <div class="list-icon-function">
 
-                                                <div class="item edit">
-                                                    <i class="icon-edit-3"></i>
-                                                </div>
+                                                <a href="{{ route('admin.brand.edit', ['id' => $brand->id]) }}">
+                                                    <div class="item edit">
+                                                        <i class="icon-edit-3"></i>
+                                                    </div>
+                                                </a>
 
                                                 <div class="item text-danger delete">
                                                     <i class="icon-trash-2"></i>
