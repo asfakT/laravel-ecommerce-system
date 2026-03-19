@@ -52,10 +52,13 @@
                     @enderror
                     <fieldset>
                         <div class="body-title">Upload images <span class="tf-color-1">*</span></div>
-                        <div class="upload-image grow">
+                        <div class="upload-image mb-16">
+                            <div class="item" id="imgpreview" style="display:none">
+                                <img src="{{ asset('uploads/brands/' . $brand->image) }}" class="effect8" alt="">
+                            </div>
                             @if ($brand->image)
-                                <div class="item" id="imgpreview">
-                                    <img src="{{ asset('uploads/brands') }}/{{ $brand->image }}" alt="">
+                                <div class="item" id="imgpreview-current">
+                                    <img src="{{ asset('uploads/brands/' . $brand->image) }}" class="effect8" alt="">
                                 </div>
                             @endif
                             <div id="upload-file" class="item up-load">
@@ -85,3 +88,28 @@
     </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function () {
+            $("#myFile").on("change", function (e) {
+                const [file] = this.files;
+                if (file) {
+                    $("#imgpreview img").attr('src', URL.createObjectURL(file));
+                    $("#imgpreview").show();
+                    $("#imgpreview-current").hide();
+                }
+            });
+
+            $("input[name='name']").on("keyup", function () {
+                $("input[name='slug']").val(StringToSlug($(this).val()));
+            });
+        });
+
+        function StringToSlug(Text) {
+            return Text.toLowerCase()
+                .replace(/[^\w ]+/g, "")
+                .replace(/ +/g, "-");
+        }
+    </script>
+@endpush
